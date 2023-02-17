@@ -4,3 +4,11 @@
 //se usa const para que el cliente no modifique el valor 
 //console.log("") registro en la consola
 //console.info("") mostrar una información, concatenar con + 
+//console.warn() y console.erro()
+//console.assert() == igual === estrictamente igual
+//alcance de las variables
+//alert prompt confirm
+//function numero_alitas(){return 12}
+//console.log(numero_alitas())
+//arrow function let cantidad_alitas=()=>{return 12};
+//console.log(cantidad_alitas())
