@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Lab 1</title>
+    <title>Lab 3</title>
 </head>
 <body>
     <table cellspacing='20'>
         <tr>
           <td><img src="foto formal circle.png"  height="200 px" width="200 px" alt="alejandra foto de perfil"></td>
           <td>
-            <h1>Alejandra Cabrera</h1>
+            <h1 class="headings">Alejandra Cabrera</h1>
             <p>A01704463</p>
-            <p>a01704463@tec.mx</p>
+            <p id="mail">a01704463@tec.mx</p>
             <p><em> SEITC y  Comité Talenta</em></p>
             <p>Studying ITC at TEC 💙🐏 </p>
             </td>
@@ -22,12 +22,12 @@
       </table>
     
       <hr>
-      <h3>Scholarity</h3>
+      <h3 class="headings">Scholarity</h3>
       <ul>
         <li>Prepa Tec generación 2018-2021 </li>
         <li>Ingeniería en Tecnologías Computacionales 2021-presente</li>
       </ul>
-      <h3>Hobbies</h3>
+      <h3 class="headings">Hobbies</h3>
       <ol>
         <li>Reading fiction, romance and self growth books.</li>
         <li>Acrilic and watercolor painting</li>
@@ -36,7 +36,7 @@
         <li>Going to the gym, running and yoga</li>
       </ol>
     
-       <h3>Work Experience</h3>
+       <h3 class="headings">Work Experience</h3>
        <table cellspacing="15">
          <thead>
            <tr>
@@ -54,7 +54,7 @@
            <tr>
          </tbody>
       </table>
-      <h3>Skills </h3>
+      <h3 class="headings">Skills </h3>
       <!--Nested Table down here -->
       <table>
         <tr>
@@ -84,7 +84,7 @@
     
          </tr>
        </table>
-    <h3>Questions: An introduction to HTML</h3>
+    <h3 class="headings">Questions: An introduction to HTML</h3>
     <ul>
         <li>The Internet is a global, interconnected network of computing devices. The World Wide Web is one set of software services running on the internet.
             Internet is the roads that connects cities together while www contains the things you see in the roads.</li>
@@ -138,8 +138,32 @@
             
             
     </ul>
-    <!--Defining java script-->
-    <script src="js.js"></script>
+    <h3 class="headings">Using css in html </h3>
+    <ol>
+      <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </li>
+      <p>The use of !important overrides the previously declaration of properties in css. I do not
+        recommend to use it hance it is difficult to debug and confusing. Only use it when there is not other way 
+        to overrride the properties or when in need to force an elements to all look the same.
+      </p>
+      <li>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</li>
+      <p>It is important to choose carefully images when defined as backgroud they most have a proper size
+         and be responsible for multiple devices. We need to be sure that the background image allows the user to 
+        read and visualize correctly the other elements in the web site</p>
+      <li>Como ingeniero de software, ¿cuál es tu recomendación
+         al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+      <p>It depends of the use, some of them are not for software development purposes including pt.
+        <ul>
+          <li>%</li>
+          <p>Ems or porcentages are used when you want the elements to size in comparison to another element</p>
+          <li>pt</li>
+          <p>Used for print elements. Not recommended for programming, preccision on paper</p>
+          <li>px</li>
+          <p>Extremely precise while sizing in a screen. All browsers support px and show them almost in the same way.</p>
+        </ul>
+      </p>
+      <li>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
+      <p>Using min css allows processing to be faster and efficient improving site speed and accesibility.</p>
+    </ol>    
 </body>
 <footer>
     <p>Done using <a href="https://code.visualstudio.com/"> Visual Estudio Code</a></p>

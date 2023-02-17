@@ -2,5 +2,17 @@
 Minimizar el csss. Contestar las preguntas.
 Alejandra Cabrera Ruiz A01704463*/
 body{
-    color: grey;
+    color: rgb(44, 42, 42);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a:visited{
+    color: cornflowerblue;
+}
+.headings{
+    color: rgb(41, 56, 121);
+    
+}
+
+#mail:hover {
+    color:cornflowerblue;
 }

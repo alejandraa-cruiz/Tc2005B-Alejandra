@@ -12,3 +12,4 @@
 //console.log(numero_alitas())
 //arrow function let cantidad_alitas=()=>{return 12};
 //console.log(cantidad_alitas())
+//Defining java script in html <script src="js.js"></script>
