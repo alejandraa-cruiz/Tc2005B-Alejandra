@@ -22,7 +22,7 @@ if (answer1==addition){
 }
 
 else{
-    document.write("Question 2. Incorrect answer", "<br>");
+    document.write("<br> Question 2. Incorrect answer", "<br>");
 }
 
 document.write("Time spend answering: " + totalT + " miliseconds", "<br>");
@@ -41,7 +41,7 @@ function counter (array1){
         if (element == 0) zero++;
     });
 
-    document.write("Question 3.", "<br>");
+    document.write("<br> Question 3.", "<br>");
     document.write("Numbers that are positive in the array: " + positive, "<br>");
     document.write("Numbers that are negative in the array: " + negative, "<br>");
     document.write("Numbers that are zero in the array: " + zero, "<br>");
@@ -52,7 +52,7 @@ counter(array1)
 
 //4. Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo
 // con los promedios de cada uno de los renglones de la matriz.
-document.write("Question 4.", "<br>")
+document.write("<br> Question 4.", "<br>")
 function average(matrix){
     document.write("The averages for each row in the matrix are: ", "<br>")
     matrix.forEach(row =>{
@@ -69,3 +69,16 @@ function average(matrix){
 
 const matrix1=[[1,2,3,4],[1,1,1,1],[5,6,7,0]];
 average(matrix1)
+
+//5. Función: inverso. Parámetros: Un número. Regresa: El número con sus dígitos en orden inverso.
+document.write("<br> Question 5.")
+function inverse(numberI){
+    const numberString = numberI.toString();
+    let array= numberString.split("");
+    let inverseArray = array.reverse();
+    let inverseNumber = inverseArray.join("");
+
+    document.write("<br> The inverse number is: " + inverseNumber);
+}
+
+inverse (2345);
