@@ -49,3 +49,23 @@ function counter (array1){
 }
 const array1=[1,2,3,4,5,0,0,-1,-2,-3];
 counter(array1)
+
+//4. Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo
+// con los promedios de cada uno de los renglones de la matriz.
+document.write("Question 4.", "<br>")
+function average(matrix){
+    document.write("The averages for each row in the matrix are: ", "<br>")
+    matrix.forEach(row =>{
+        let sum = 0;
+        let lenght=0;
+        row.forEach(element =>{
+            sum= sum + element;
+            lenght++;
+        })
+        let average=sum/lenght;
+        document.write(average, "<br>");
+    })
+}
+
+const matrix1=[[1,2,3,4],[1,1,1,1],[5,6,7,0]];
+average(matrix1)
