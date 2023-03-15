@@ -1,0 +1,52 @@
+<%- include('includes/head.ejs') %>
+<br>
+<h1 class="title">2023 reads</h1>
+<a href="/books/newBook" class="button is-light">Add book</a>
+<br><br>
+<% if (books.length > 0) { %>
+  <div class="columns is-multiline">
+      <% for (let book of books) { %>
+          <div class="column is-3">
+              <div class="card">
+                  <div class="card-image">
+                      <figure class="image is-1by1.5">
+                          <img src="<%= book.image %>" alt="Placeholder image">
+                      </figure>
+                  </div>
+                  <div class="card-content">
+                      <div class="media">
+                          <div class="media-left">
+                          <figure class="image is-48x48">
+                              <img src="<%= book.image %>" alt="Placeholder image">
+                          </figure>
+                          </div>
+                          <div class="media-content">
+                          <p class="title is-4"><%= book.name %></p>
+                          <p class="subtitle is-6"><%= book.author %> </p>
+                          </div>
+                      </div>
+                  
+                      <div class="content">
+                          <%= book.quote %> 
+                          <br><br>
+                          Rate
+                          <br>
+                          <%= book.rate %> 
+                      </div>
+                  </div>
+              </div>
+          </div>
+      <% } %>
+  </div>
+<% } else { %>
+  <h1>No hay libros registrados </h1>
+<% } %> 
+<br><br>
+
+<% if (last_book != '') { %>
+    <div class="notification is-link is-light">
+        Last book registered was: <%= last_book %>
+    </div>
+<% } %>
+
+<%- include('includes/foot.ejs') %>

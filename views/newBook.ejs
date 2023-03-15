@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+<br>
+<h1 class="title">Add new book</h1>
+
+<br><br>
+
+<form action="/books/newBook" method="POST">
+
+    <label for="name">Name</label>
+    <input required name="name" id="name" class="input" type="text" placeholder="If he had been with me">
+
+    <label for="author">Author</label>
+    <input name="author" id="author" class="input" type="text" placeholder="Laura Nowlin">
+
+    <label for="quote">Favorite quote</label>
+    <input name="quote" id="quote" class="input" type="text" placeholder="It was understood by everyone that I belonged to Finny and that we belonged together">
+
+    <label for="image">Image link</label>
+    <input name="image" id="image" class="input" type="text">
+
+    <label for="rate">Rate with hearts</label>
+    <input name="rate" id="rate" class="input" type="text" placeholder="❤️❤️❤️">
+
+    <br><br>
+
+    <input class="button is-black" type="submit" value="Register">
+
+</form>
+
+<%- include('includes/foot.ejs') %>
