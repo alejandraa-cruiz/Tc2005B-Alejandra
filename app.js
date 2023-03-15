@@ -9,8 +9,8 @@ app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const conejosRutas = require('./routes/conejos.routes');
-app.use('/conejos', conejosRutas);
+const bookRoutes = require('./routes/books.routes');
+app.use('/books', bookRoutes);
 
 
 app.use((request, response, next) => {
