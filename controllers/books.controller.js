@@ -1,23 +1,9 @@
-const books = [
-    {
-        name: 'If he had been with me',
-        author: 'Laura Nowlin',
-        image: 'https://m.media-amazon.com/images/I/81GNCzI3CJL.jpg',
-        quote: 'It was understood by everyone that I belonged to Finny and that we belonged together',
-        rate: '❤️❤️❤️',
-
-    },
-
-    {
-        name: 'Reminders of him',
-        author: 'Colleen Hoover',
-        image: 'https://m.media-amazon.com/images/I/617uZq23IPL.jpg',
-        quote: 'There was before you and there was during you. For some reason, I never thought there would be an after you.',
-        rate: '❤️❤️',
-
-    },
-];
+const Books = require ('../models/books.model');
 
 exports.get_books = (request, response, next) => {
-    response.render ('home', {books: books});
+    response.render('home', {books: Books.fetchAll()})
+}
+
+exports.get_new = (request, response, next) => {
+    response.render('newBook');
 }

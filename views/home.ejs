@@ -1,5 +1,8 @@
 <%- include('includes/head.ejs') %>
-
+<br>
+<h1 class="title">2023 reads</h1>
+<a href="/books/newBook" class="button is-light">Add book</a>
+<br><br>
 <% if (books.length > 0) { %>
   <div class="columns is-multiline">
       <% for (let book of books) { %>
