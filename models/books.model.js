@@ -19,7 +19,7 @@ const books = [
 ];
 
 //Crear el modelo de la clase Books
-module.exports = class Books{
+module.exports = class Book{
     //Constructor de la clase. Sirve para crear un nuevo objeto con ciertas propiedades
     constructor(my_book){
         this.name = my_book.name || "If he had been with me";
