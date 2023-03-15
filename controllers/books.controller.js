@@ -1,25 +1,23 @@
 const books = [
     {
-        nombre: 'If he had been with me',
+        name: 'If he had been with me',
         author: 'Laura Nowlin',
-        imagen: 'https://m.media-amazon.com/images/I/81GNCzI3CJL.jpg',
+        image: 'https://m.media-amazon.com/images/I/81GNCzI3CJL.jpg',
         quote: 'It was understood by everyone that I belonged to Finny and that we belonged together',
-        handle: '@ifhehadbeenwithme',
-        calificacion: '❤️❤️❤️',
+        rate: '❤️❤️❤️',
 
     },
 
     {
-        nombre: 'Reminders of him',
+        name: 'Reminders of him',
         author: 'Colleen Hoover',
-        imagen: 'https://m.media-amazon.com/images/I/617uZq23IPL.jpg',
+        image: 'https://m.media-amazon.com/images/I/617uZq23IPL.jpg',
         quote: 'There was before you and there was during you. For some reason, I never thought there would be an after you.',
-        handle: '@remindersofhim',
-        calificacion: '❤️❤️',
+        rate: '❤️❤️',
 
     },
-]
+];
 
 exports.get_books = (request, response, next) => {
-    response.render ('home');
+    response.render ('home', {books: books});
 }

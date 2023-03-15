@@ -1,69 +1,41 @@
 <%- include('includes/head.ejs') %>
-<div class="columns is-multiline">
 
-  <!-- First book-->
-  <div class="column is-3">
-    <div class="card">
-        <div class="card-image">
-            <figure class="image is-1by1.5">
-                <img src="https://m.media-amazon.com/images/I/81GNCzI3CJL.jpg" alt="Placeholder image">
-            </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-left">
-                <figure class="image is-48x48">
-                    <img src="https://m.media-amazon.com/images/I/81GNCzI3CJL.jpg" alt="Placeholder image">
-                </figure>
-                </div>
-                <div class="media-content">
-                <p class="title is-4">If he had been with me</p>
-                <p class="subtitle is-6">Laura nowlin </p>
-                </div>
-            </div>
-        
-            <div class="content">
-                It was understood by everyone that I belonged to Finny and that we belonged together
-                <br><br>
-                Calificación
-                <br>
-                ❤️❤️❤️
-            </div>
-        </div>
-    </div>
+<% if (books.length > 0) { %>
+  <div class="columns is-multiline">
+      <% for (let book of books) { %>
+          <div class="column is-3">
+              <div class="card">
+                  <div class="card-image">
+                      <figure class="image is-1by1.5">
+                          <img src="<%= book.image %>" alt="Placeholder image">
+                      </figure>
+                  </div>
+                  <div class="card-content">
+                      <div class="media">
+                          <div class="media-left">
+                          <figure class="image is-48x48">
+                              <img src="<%= book.image %>" alt="Placeholder image">
+                          </figure>
+                          </div>
+                          <div class="media-content">
+                          <p class="title is-4"><%= book.name %></p>
+                          <p class="subtitle is-6"><%= book.author %> </p>
+                          </div>
+                      </div>
+                  
+                      <div class="content">
+                          <%= book.quote %> 
+                          <br><br>
+                          Rate
+                          <br>
+                          <%= book.rate %> 
+                      </div>
+                  </div>
+              </div>
+          </div>
+      <% } %>
   </div>
-
-  <!-- Second book-->
-  <div class="column is-3">
-    <div class="card">
-        <div class="card-image">
-            <figure class="image is-1by1.5">
-                <img src="https://m.media-amazon.com/images/I/617uZq23IPL.jpg" alt="Placeholder image">
-            </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-left">
-                <figure class="image is-48x48">
-                    <img src="https://m.media-amazon.com/images/I/617uZq23IPL.jpg" alt="Placeholder image">
-                </figure>
-                </div>
-                <div class="media-content">
-                <p class="title is-4">Reminders of him</p>
-                <p class="subtitle is-6">Colleen Hoover </p>
-                </div>
-            </div>
-        
-            <div class="content">
-                <br>
-                There was before you and there was during you. For some reason, I never thought there would be an after you.
-                <br><br>
-                Calificación
-                <br>
-                ❤️❤️
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
+<% } else { %>
+  <h1>No hay libros registrados </h1>
+<% } %> 
 <%- include('includes/foot.ejs') %>
