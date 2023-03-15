@@ -41,4 +41,12 @@
 <% } else { %>
   <h1>No hay libros registrados </h1>
 <% } %> 
+<br><br>
+
+<% if (last_book != '') { %>
+    <div class="notification is-link is-light">
+        Last book registered was: <%= last_book %>
+    </div>
+<% } %>
+
 <%- include('includes/foot.ejs') %>
