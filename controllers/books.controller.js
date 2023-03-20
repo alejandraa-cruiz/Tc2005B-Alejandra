@@ -16,7 +16,10 @@ exports.get_books = (request, response, next) => {
 };
 
 exports.get_new = (request, response, next) => {
-    response.render('newBook');
+    response.render('newBook',{
+        isLoggedIn: request.session.isLoggedIn || false,
+        nombre: request.session.nombre || '',
+    });
 };
 
 exports.post_new = (request, response, next) => {

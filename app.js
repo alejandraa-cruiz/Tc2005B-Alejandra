@@ -2,8 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
+const isAuth = require('./util/is-auth');
 
 const app = express();
+
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -19,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const usersRoutes = require('./routes/users.routes');
 app.use('/users',usersRoutes);
 const bookRoutes = require('./routes/books.routes');
-app.use('/books', bookRoutes);
+app.use('/books', isAuth, bookRoutes);
 
 
 app.use((request, response, next) => {

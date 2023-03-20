@@ -22,5 +22,13 @@ module.exports = class User {
         .catch((error) => { console.log(error) });
     }
 
+    static fetchOne(username) {
+        return db.execute(`
+            SELECT * 
+            FROM usuarios
+            WHERE username = ?
+        `, [username]);
+    }
+
 
 }
