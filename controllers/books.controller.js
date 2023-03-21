@@ -12,6 +12,9 @@ exports.get_books = (request, response, next) => {
     response.setHeader('Set-Cookie', 'books=cookieBook');
     response.render('home', {books: Book.fetchAll(),
         last_book: request.session.last_book || '',
+        isLoggedIn: request.session.isLoggedIn || false,
+        nombre: request.session.nombre || '',
+        privilegios: request.session.privilegios || [],
     });
 };
 
