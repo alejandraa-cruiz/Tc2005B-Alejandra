@@ -96,11 +96,6 @@ AND E.rfc IN (SELECT E.rfc
                 AND P.denominacion = 'Queretaro Limpio')
 GROUP BY Pr.razonsocial
 --8.Descripción de los materiales que nunca han sido entregados al proyecto 'CIT Yucatán'.
---Materiales(Clave, Descripción, Precio)
---Proveedores(RFC, RazonSocial)
---Proyectos(Numero,Denominacion)
---Entregan(Clave, RFC, Numero, Fecha, Cantidad)
-
 SELECT descripcion
 FROM Materiales
 WHERE clave NOT IN (SELECT E.clave
@@ -109,9 +104,39 @@ WHERE E.numero = P.numero
 AND P.denominacion = 'CIT Yucatán')
 
 --9.Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor al promedio de la cantidad entregada por el proveedor con el RFC 'VAGO780901'.
+SELECT Pr.razonsocial, AVG(E.cantidad) as 'Promedio Cantidad Entregada'
+FROM Proveedores as Pr, Entregan as E
+WHERE Pr.rfc = E.rfc
+GROUP BY Pr.razonsocial
+HAVING AVG(E.cantidad) > (SELECT AVG (E.cantidad)
+                            FROM Proveedores as Pr, Entregan as E
+                            WHERE Pr.rfc = E.rfc
+                            AND Pr.rfc = 'VAGO780901')
 
+--No da resultados porque el proveedor con ese RFC no existe y no puede hacer una comparación con NULL
 
 --10. RFC, razón social de los proveedores que participaron en el proyecto 'Infonavit Durango' y cuyas cantidades totales entregadas en el 2000 fueron mayores a las cantidades totales entregadas en el 2001.
+--SELECT P.rfc, P.razonSocial, SUM(e.cantidad)
+--FROM proveedores as P, proyectos as Pr, Entregan AS E
+--WHERE fecha BETWEEN '2000-01-01' AND '2000-12-31'
+--AND pr.denominacion = 'Infonavit Durango'
+--GROUP by  P.rfc, P.razonSocial
+--HAVING SUM(e.cantidad) > (SELECT SUM(e.cantidad)
+  --                         FROM proveedores as P, proyectos as Pr, Entregan AS E
+    --                       WHERE fecha BETWEEN '2001-01-01' AND '2001-12-31')
 
-
-
+SELECT rfc, razonSocial
+FROM proveedores
+wHERE rfc IN (SELECT E.rfc
+              FROM Entregan AS E, proyectos AS Pr
+              wHERE E.numero = Pr.numero
+              AND Pr.denominacion = 'Infonavit Durango'
+              AND E.fecha BETWEEN '2000-01-01' AND '2000-12-31'
+              GROUP BY E.rfc
+              HAVING SUM(E.cantidad) > (SELECT SUM(E.cantidad)
+                                        FROM  Entregan AS E, proyectos AS Pr, proveedores as P
+                                        WHERE E.numero = Pr.numero
+                                        AND Pr.denominacion = 'Infonavit Durango'
+                                        AND E.fecha BETWEEN '2001-01-01' AND '2001-12-31'
+                                        )
+)
