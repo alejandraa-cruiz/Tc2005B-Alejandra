@@ -4,7 +4,7 @@
 
 <br><br>
 
-<form action="/books/newBook" method="POST">
+<form action="/books/newBook" method="POST" enctype="multipart/form-data">
     
     <label for="name">Name</label>
     <input required name="name" id="name" class="input" type="text" placeholder="If he had been with me">
@@ -19,6 +19,9 @@
     <input name="image" id="image" class="input" type="text">
 
     <label for="rate">Rate with hearts</label>
+    <input name="rate" id="rate" class="input" type="text" placeholder="❤️❤️❤️">
+
+    <label for="rate">Image</label>
     <input name="rate" id="rate" class="input" type="text" placeholder="❤️❤️❤️">
 
     <br><br>
